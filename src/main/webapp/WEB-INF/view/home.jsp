@@ -2,147 +2,177 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Add Employee</title>
+    <title>Welcome Page</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background: #f2f2f2;
             margin: 0;
-            padding: 0;
+            background-color: #e8f5e9;
+            font-family: Arial, sans-serif;
+            color: #2e7d32;
         }
 
-        /* Header Styles */
-        .header {
+        /* Header Styling */
+        header {
             background-color: #4CAF50;
-            padding: 15px 30px;
             color: white;
+            padding: 15px 30px;
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
 
-        .header h1 {
+        header h1 {
             margin: 0;
-            font-size: 24px;
+            font-size: 1.8em;
         }
 
-        .nav {
-            display: flex;
-            gap: 20px;
-        }
-
-        .nav a {
+        nav a {
             color: white;
             text-decoration: none;
-            font-weight: bold;
+            margin-left: 20px;
+            font-size: 1em;
         }
 
-        .nav a:hover {
+        nav a:hover {
             text-decoration: underline;
         }
 
-        /* Form Container */
-        .container {
-            max-width: 500px;
-            margin: 40px auto;
-            background: white;
-            padding: 30px;
+        /* Main Content */
+        .welcome-box {
+            background-color: #ffffff;
+            border: 2px solid #4CAF50;
             border-radius: 10px;
-            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            margin: 50px auto;
+            padding: 30px 50px;
+            max-width: 90%;
+            text-align: center;
         }
 
         h2 {
-            text-align: center;
-            margin-bottom: 25px;
+            color: #388E3C;
+            margin-top: 40px;
         }
 
-        label {
-            display: block;
-            margin-bottom: 5px;
-            font-weight: bold;
-        }
-
-        input[type="text"],
-        input[type="date"],
-        input[type="password"],
-        select,
-        textarea {
+        table {
+            margin: 20px auto;
+            border-collapse: collapse;
             width: 100%;
-            padding: 10px;
-            margin-bottom: 15px;
-            border: 1px solid #ccc;
-            border-radius: 6px;
-            box-sizing: border-box;
         }
 
-        textarea {
-            resize: vertical;
-            min-height: 60px;
+        th, td {
+            padding: 12px 15px;
+            border: 1px solid #4CAF50;
+            text-align: center;
         }
 
-        .btn {
+        th {
             background-color: #4CAF50;
             color: white;
-            padding: 12px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f1f8e9;
+        }
+
+        tr:hover {
+            background-color: #c8e6c9;
+        }
+
+        .highlight {
+            font-weight: bold;
+            background-color: #a5d6a7 !important;
+        }
+
+        .button {
+            margin-top: 20px;
+            padding: 10px 25px;
+            background-color: #4CAF50;
+            color: white;
             border: none;
-            width: 100%;
-            border-radius: 6px;
+            border-radius: 5px;
+            font-size: 1em;
             cursor: pointer;
-            font-size: 16px;
         }
 
-        .btn:hover {
-            background-color: #45a049;
+        .button:hover {
+            background-color: #388E3C;
         }
-
     </style>
 </head>
 <body>
 
     <!-- Header -->
-    <div class="header">
-        <h1>Employee Portal</h1>
-        <div class="nav">
+    <header>
+        <h1>Employee Portal</h1>                                
+        <nav>
             <a href="/home">Home</a>
-            <a href="/login">Welcome</a>
-        </div>
-    </div>
+            <a href="/register">Add Employee</a>
+        </nav>
+    </header>
 
-    <!-- Form Container -->
-    <div class="container">
-        <h2>Add New Employee</h2>
-        <form action="/submit-employee" method="post">
-            <label for="name">Name</label>
-            <input type="text" id="name" name="name" required>
+    <!-- Main Content -->
+    <div class="welcome-box">
+        <h1>Welcome</h1>
+        <p><strong>Welcome, John!</strong></p>
 
-            <label for="dob">Date of Birth</label>
-            <input type="date" id="dob" name="dob" required>
+        <h2>Employee Records</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Date of Birth</th>
+                    <th>Gender</th>
+                    <th>Address</th>
+                    <th>City</th>
+                    <th>State</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Alice Smith</td>
+                    <td>1990-04-12</td>
+                    <td>Female</td>
+                    <td>123 Maple Street</td>
+                    <td>New York</td>
+                    <td>NY</td>
+                </tr>
+                <tr>
+                    <td>Bob Johnson</td>
+                    <td>1985-07-23</td>
+                    <td>Male</td>
+                    <td>456 Oak Avenue</td>
+                    <td>Chicago</td>
+                    <td>IL</td>
+                </tr>
+                <tr>
+                    <td>Charlie Lee</td>
+                    <td>1992-11-02</td>
+                    <td>Male</td>
+                    <td>789 Pine Road</td>
+                    <td>Los Angeles</td>
+                    <td>CA</td>
+                </tr>
+                <tr>
+                    <td>John Doe</td>
+                    <td>1988-05-15</td>
+                    <td>Male</td>
+                    <td>101 Green Street</td>
+                    <td>Houston</td>
+                    <td>TX</td>
+                </tr>
+                <tr>
+                    <td>Emma Brown</td>
+                    <td>1995-03-30</td>
+                    <td>Female</td>
+                    <td>321 Cedar Lane</td>
+                    <td>Miami</td>
+                    <td>FL</td>
+                </tr>
+            </tbody>
+        </table>
 
-            <label for="gender">Gender</label>
-            <select id="gender" name="gender" required>
-                <option value="">-- Select Gender --</option>
-                <option value="Male">Male</option>
-                <option value="Female">Female</option>
-                <option value="Other">Other</option>
-            </select>
-
-            <label for="address">Address</label>
-            <textarea id="address" name="address" required></textarea>
-
-            <label for="city">City</label>
-            <input type="text" id="city" name="city" required>
-
-            <label for="state">State</label>
-            <input type="text" id="state" name="state" required>
-
-            <label for="loginId">Login ID</label>
-            <input type="text" id="loginId" name="loginId" required>
-
-            <label for="password">Password</label>
-            <input type="password" id="password" name="password" required>
-
-            <button type="submit" class="btn">Register</button>
-        </form>
+        <button class="button">Continue</button>
     </div>
 
 </body>
