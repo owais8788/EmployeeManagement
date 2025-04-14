@@ -1,3 +1,7 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
+	<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+	<%@page isELIgnored="false"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -104,7 +108,7 @@
 
     <!-- Header -->
     <header>
-        <h1>Employee Portal</h1>                                
+        <h1>Employee Portal</h1>
         <nav>
             <a href="/home">Home</a>
             <a href="/register">Add Employee</a>
@@ -116,7 +120,7 @@
         <h1>Welcome</h1>
         <p><strong>Welcome, John!</strong></p>
 
-        <h2>Employee Records</h2>
+        <h2>Registered Employees</h2>
         <table>
             <thead>
                 <tr>
@@ -129,50 +133,18 @@
                 </tr>
             </thead>
             <tbody>
+            <c:forEach var="emp" items="${employees}">
                 <tr>
-                    <td>Alice Smith</td>
-                    <td>1990-04-12</td>
-                    <td>Female</td>
-                    <td>123 Maple Street</td>
-                    <td>New York</td>
-                    <td>NY</td>
+                    <td>${emp.name}</td>
+                    <td>${emp.dob}</td>
+                    <td>${emp.gender}</td>
+                    <td>${emp.address}</td>
+                    <td>${emp.city}</td>
+                    <td>${emp.state}</td>
                 </tr>
-                <tr>
-                    <td>Bob Johnson</td>
-                    <td>1985-07-23</td>
-                    <td>Male</td>
-                    <td>456 Oak Avenue</td>
-                    <td>Chicago</td>
-                    <td>IL</td>
-                </tr>
-                <tr>
-                    <td>Charlie Lee</td>
-                    <td>1992-11-02</td>
-                    <td>Male</td>
-                    <td>789 Pine Road</td>
-                    <td>Los Angeles</td>
-                    <td>CA</td>
-                </tr>
-                <tr>
-                    <td>John Doe</td>
-                    <td>1988-05-15</td>
-                    <td>Male</td>
-                    <td>101 Green Street</td>
-                    <td>Houston</td>
-                    <td>TX</td>
-                </tr>
-                <tr>
-                    <td>Emma Brown</td>
-                    <td>1995-03-30</td>
-                    <td>Female</td>
-                    <td>321 Cedar Lane</td>
-                    <td>Miami</td>
-                    <td>FL</td>
-                </tr>
+            </c:forEach>
             </tbody>
         </table>
-
-        <button class="button">Continue</button>
     </div>
 
 </body>

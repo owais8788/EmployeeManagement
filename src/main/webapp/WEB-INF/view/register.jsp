@@ -1,3 +1,7 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
+	<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+	<%@page isELIgnored="false"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -109,7 +113,14 @@
 
     <!-- Form Container -->
     <div class="container">
+    <div>
         <h2>Add New Employee</h2>
+        <c:if test="${not empty msg}">
+        <h3>${msg}</h3>
+        <c:remove var="msg"/>
+        </c:if>
+    </div>
+
         <form action="/createEmp" method="post">
             <label for="name">Name</label>
             <input type="text" id="name" name="name" required>
