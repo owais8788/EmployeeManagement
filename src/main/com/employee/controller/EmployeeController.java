@@ -53,4 +53,10 @@ public class EmployeeController {
             return "redirect:/login";
         }
     }
+
+    @RequestMapping("/logout")
+    public String logout(HttpSession session) {
+        session.invalidate(); // Clear user session
+        return "redirect:/login";
+    }
 }
