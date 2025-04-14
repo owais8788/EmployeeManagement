@@ -8,7 +8,9 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
+import javax.servlet.http.HttpSession;
 import java.util.List;
 
 @Controller
@@ -38,5 +40,17 @@ public class EmployeeController {
         int i = employeeDao.saveEmployee(employee);
         model.addAttribute("msg", "Employee Registered Successfully");
         return "/register";
+    }
+
+    @RequestMapping(path = "/loginUser", method = RequestMethod.POST)
+    public String loginUser(@RequestParam String loginId, @RequestParam String password, HttpSession session) {
+        Employee employee = employeeDao.loginEmployee(loginId, password);
+        if(employee != null){
+            session.setAttribute("name", employee.getName());
+            return "redirect:/home";
+        } else {
+            session.setAttribute("msg", "Invalid login credentials");
+            return "redirect:/login";
+        }
     }
 }

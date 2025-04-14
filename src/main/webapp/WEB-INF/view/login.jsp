@@ -1,3 +1,7 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
+	<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+	<%@page isELIgnored="false"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -86,7 +90,11 @@
 
   <div class="login-container">
     <h2>Login</h2>
-    <form>
+    <c:if test="${not empty msg}">
+            <h3>${msg}</h3>
+            <c:remove var="msg"/>
+            </c:if>
+    <form action="/loginUser" method="post">
       <div class="form-group">
         <label for="loginId">Login ID</label>
         <input type="text" id="loginId" name="loginId" required />
@@ -96,7 +104,7 @@
         <input type="password" id="password" name="password" required />
       </div>
       <button type="submit" class="btn">Login</button>
-      <a href="register.html" class="register-link">Don't have an account? Register</a>
+      <a href="/register" class="register-link">Don't have an account? Register</a>
     </form>
   </div>
 

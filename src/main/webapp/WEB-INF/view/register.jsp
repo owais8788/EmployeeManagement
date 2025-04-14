@@ -113,13 +113,11 @@
 
     <!-- Form Container -->
     <div class="container">
-    <div>
         <h2>Add New Employee</h2>
         <c:if test="${not empty msg}">
         <h3>${msg}</h3>
         <c:remove var="msg"/>
         </c:if>
-    </div>
 
         <form action="/createEmp" method="post">
             <label for="name">Name</label>

@@ -118,7 +118,7 @@
     <!-- Main Content -->
     <div class="welcome-box">
         <h1>Welcome</h1>
-        <p><strong>Welcome, John!</strong></p>
+        <p><strong>Welcome, ${name}!</strong></p>
 
         <h2>Registered Employees</h2>
         <table>
