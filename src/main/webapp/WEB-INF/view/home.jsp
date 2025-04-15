@@ -104,7 +104,6 @@
          <h1>Employee Portal</h1>
          <nav>
             <a href="/home">Home</a>
-            <a href="/register">Add Employee</a>
             <form action="/logout" method="post" style="display:inline;">
                <button type="submit">Logout</button>
             </form>
