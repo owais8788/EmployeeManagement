@@ -102,10 +102,7 @@
       <header>
          <h1>Employee Portal</h1>
          <nav>
-            <a href="/home">Home</a>
-            <form action="/logout" method="post" style="display:inline;">
-               <button type="submit">Logout</button>
-            </form>
+            <a href="/login">Login</a>
          </nav>
       </header>
       <!-- Form Container -->
